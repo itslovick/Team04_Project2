@@ -13,8 +13,6 @@ public class runApplication {
 	 * @param args
 	 */
 	public static void main(String args[]) {
-		boolean loginAuthenticated = false; 
-		
 		// Display login window
 		new LoginUI().setVisible(true);
 	}

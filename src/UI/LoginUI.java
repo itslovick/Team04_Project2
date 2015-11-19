@@ -128,18 +128,44 @@ public class LoginUI extends javax.swing.JFrame {
         // Call the authenticateUser method from the database with 
 		// the strings stored in usernameField and passwordField. 
 		
-		// FAKE AUTHENTICATION
-		this.setVisible(false);
-		Component frame = null;
-		JOptionPane.showMessageDialog(frame, "Fake login works so far");
-		new StudentUI().setVisible(true);
+		char userType = 'N'; // To store the type of user logging into system. 
+							// Options include t - teacher, s - student, 
+							// and n - not valid.
 		
-		usernameField.setText(null);
-		passwordField.setText(null);
-		this.setVisible(true);
-		// It is very, very ugly to do this, but it is likely that there will 
-		// be an if else here that creates either a StudentUI or InstructorUI
-		// object here depending on "type" of user after authentication. 
+		// AUTHENTICATION AND CREATION OF NEW WINDOWS
+		// Create a teacher window if userType is T - teacher
+		// Pass username to TeacherUI to create user object in TeacherUI class 
+		// with data populated from the database.
+		if (Character.toUpperCase(userType) == 'T') {
+			this.setVisible(false); // Hide this login frame
+			
+			// Create a new teacher frame. Username is passed as parameter 
+			// to create the title for the new Frame, and to retrieve 
+			// user information using getUser method from Database class.
+			new TeacherUI(usernameField.getText()).setVisible(true); 
+		}
+		
+		// Create a student window if userType is S - student
+		// Pass username to TeacherUI to create user object in TeacherUI class 
+		// with data populated from the database.
+		else if (Character.toUpperCase(userType) == 'S') {
+			this.setVisible(false); // Hide this login frame
+			
+			new StudentUI(usernameField.getText()).setVisible(true);
+		}
+		
+		// Otherwise, we simple clear the fields to allow another attempt.
+		else {
+			usernameField.setText(null);
+			passwordField.setText(null);
+		}
+		
+//		Component frame = null;
+//		JOptionPane.showMessageDialog(frame, "Fake login works so far");
+//		new StudentUI("Blank").setVisible(true);
+//		usernameField.setText(null);
+//		passwordField.setText(null);
+//		this.setVisible(false);
     }//GEN-LAST:event_loginButtonActionPerformed
 
 //	/**
