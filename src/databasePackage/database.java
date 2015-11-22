@@ -229,8 +229,6 @@ public String studentStats(int id) throws SQLException{
 	return null;
 	
 }
-
-
 /**
  * @param user
  * @return String
@@ -239,6 +237,7 @@ public String studentStats(int id) throws SQLException{
  * -Returns user info from table.
  * -Close connection
  */
+//done
 public String getUserInfo(String user) throws SQLException{
 	openConnection();
 	PreparedStatement displayInfo=dbCon.prepareStatement("Select * from User where username = ?");
@@ -253,23 +252,55 @@ public String getUserInfo(String user) throws SQLException{
 }
 /**
  * 
- * @param user,fname,mi,lname,pass
+ * @param user
+ * @param fname
+ * @param mi
+ * @param lname
+ * @param pass
  * @throws SQLException
  * -Open Connection
  * -Adds User
  * -Close Connection
  */
-//insert new user record
-public void insertUser(String user, String fname, String mi, String lname, String pass) throws SQLException{
+//done
+public void insertUser(String user, String fname, String mi, String lname,String accountType) throws SQLException{
 	openConnection();
-	String insertQuery = " insert into users (username, firstname, middle, lastname, account type, password) values (?, ?, ?, ?, ?)";
+	String pass ="password1234";
+	String insertQuery = " insert into users (username, firstname, middle, lastname, account type, password) values (?, ?, ?, ?, ?,?)";
 	PreparedStatement insertStmt = dbCon.prepareStatement(insertQuery);
 	insertStmt.setString(1, user);
 	insertStmt.setString(2, fname);
 	insertStmt.setString(3, mi);
 	insertStmt.setString(4, lname);
-	insertStmt.setString(5, pass);
+	insertStmt.setString(5, accountType);
+	insertStmt.setString(6, pass);
 	try{
+	switch(accountType){
+	case "S":{
+		PreparedStatement studentStmt = dbCon.prepareStatement("insert into Student (a_num,username,first_name,m.i,last_name,grade_level) values (?,?,?,?,?,?)");
+		String grade_level = "F";
+		studentStmt.setString(2,user);
+		studentStmt.setString(3, fname);
+		studentStmt.setString(4,mi);
+		studentStmt.setString(5,lname);
+		studentStmt.setString(6,grade_level);
+		studentStmt.executeQuery();
+		break;
+	}
+	case "T":{
+		PreparedStatement teacherStmt = dbCon.prepareStatement("insert into Student (username,First_name,M.I.,Last_Name) values (?,?,?,?)");
+		teacherStmt.setString(1,user);
+		teacherStmt.setString(2, fname);
+		teacherStmt.setString(3, mi);
+		teacherStmt.setString(4,lname);
+		teacherStmt.executeQuery();
+		break;
+		
+	}
+	case "*":{
+		System.out.println("Added User");
+	}
+	}
 	insertStmt.executeQuery();
 	}
 	catch(Exception SQLException){
@@ -278,7 +309,71 @@ public void insertUser(String user, String fname, String mi, String lname, Strin
 		closeConnection();
 	}
 }
+/**
+ * needs to add grades to database into
+ * student , course_id = composite key
+ *	@param username, course, grade earned.
+ */
+//todo
+public void insertStudentGrades(){
+	
+}
+/**
+ * it query for last anum used
+ * returns value
+ * does calculation to add new anum 
+ * displays it to admin and put it into database.
+ * @throws SQLException 
+ */
+//done
+public int createAnum() throws SQLException{
+	openConnection();
+    int newAnum=0;
+	PreparedStatement createAnum = dbCon.prepareStatement("select * from student order by a_num desc Limit 1");
+	ResultSet result = createAnum.executeQuery();
+	while (result.next()){
+		newAnum = result.getInt(1)+1;
+	}
+	
+	closeConnection();
+	return newAnum;
+	
+}
+/**
+ * allows user to change pasword.
+ * @param username
+ * @param newpassword
+ */
+public void changePassword(String User, String pass){
+	
+}
 
+/**
+ * used to help display the course names per column in grades
+ * make a String vector thats going to save the column names for each table
+ * @return string
+ */
+//todo
+protected String getColumnName(String table, int ColumnNumber){
+	//todo
+	return table;
+
+}
+/**
+ * used to set column from input grades.
+ * @param table
+ * @param ColumnNumber
+ */
+//todo
+protected void setColumnName(String table, int ColumnNumber){
+	//todo
+	
+}
+//Still need to figure out e
+//todo
+private void registerStudent(){
+	
+}
 
 
 }
