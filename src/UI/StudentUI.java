@@ -8,13 +8,20 @@ package UI;
  * @author Fernando Vela
  */
 public class StudentUI extends javax.swing.JFrame {
-
+//	private User currentUser = new User();		// to hold student's information
+//	private database db = new database();	// to utilize the database
+	
 	/**
 	 * Creates new form StudentUI
+	 * @param username - Student's username
 	 */
-	public StudentUI(String username) {
+	public StudentUI(String username) {		
 		this.setTitle(username + "'s" + " Control Panel");
 		initComponents();
+		
+		// populate currentUser object fields by memberwise assignment from user 
+		// object returned by the database
+//		currentUser = db.getUserInfo(username);
 	}
 	
 	/**
@@ -28,6 +35,8 @@ public class StudentUI extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         statsButton = new javax.swing.JButton();
+        groupsButton = new javax.swing.JButton();
+        coursesButton = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         dataTextArea = new javax.swing.JTextArea();
@@ -43,22 +52,45 @@ public class StudentUI extends javax.swing.JFrame {
             }
         });
 
+        groupsButton.setText("My Groups");
+        groupsButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                groupsButtonActionPerformed(evt);
+            }
+        });
+
+        coursesButton.setText("Current Courses");
+        coursesButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                coursesButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(statsButton)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(coursesButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(groupsButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(statsButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(statsButton)
+                .addGap(18, 18, 18)
+                .addComponent(groupsButton)
+                .addGap(18, 18, 18)
+                .addComponent(coursesButton)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        groupsButton.getAccessibleContext().setAccessibleDescription("");
 
         jPanel2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
@@ -73,14 +105,14 @@ public class StudentUI extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 492, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 537, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 394, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 195, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -109,13 +141,24 @@ public class StudentUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void statsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_statsButtonActionPerformed
-        dataTextArea.append("This is a test line.\n");
+		dataTextArea.setText(null);
+		dataTextArea.append("This is a test line.\n");
 		dataTextArea.append("This is a second test line.\n");
     }//GEN-LAST:event_statsButtonActionPerformed
 
+    private void groupsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_groupsButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_groupsButtonActionPerformed
+
+    private void coursesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_coursesButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_coursesButtonActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton coursesButton;
     private javax.swing.JTextArea dataTextArea;
+    private javax.swing.JButton groupsButton;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;

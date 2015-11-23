@@ -17,6 +17,7 @@ public class LoginUI extends javax.swing.JFrame {
 	 */
 	public LoginUI() {
 		initComponents();
+		this.setLocationRelativeTo(null);
 	}
 
 	/**
@@ -128,27 +129,29 @@ public class LoginUI extends javax.swing.JFrame {
         // Call the authenticateUser method from the database with 
 		// the strings stored in usernameField and passwordField. 
 		
-		char userType = 'N'; // To store the type of user logging into system. 
-							// Options include t - teacher, s - student, 
-							// and n - not valid.
+		String userType = "s";	// To store the type of user logging into system. 
+								// Options include t - teacher, s - student, 
+								// and n - not valid.
 		
-		// AUTHENTICATION AND CREATION OF NEW WINDOWS
+		// ----- AUTHENTICATION AND CREATION OF NEW WINDOWS ----- // 
+		
 		// Create a teacher window if userType is T - teacher
 		// Pass username to TeacherUI to create user object in TeacherUI class 
 		// with data populated from the database.
-		if (Character.toUpperCase(userType) == 'T') {
+		if ("T".equals(userType.toUpperCase())) {
 			this.setVisible(false); // Hide this login frame
 			
 			// Create a new teacher frame. Username is passed as parameter 
 			// to create the title for the new Frame, and to retrieve 
 			// user information using getUser method from Database class.
 			new TeacherUI(usernameField.getText()).setVisible(true); 
+			
 		}
 		
 		// Create a student window if userType is S - student
 		// Pass username to TeacherUI to create user object in TeacherUI class 
 		// with data populated from the database.
-		else if (Character.toUpperCase(userType) == 'S') {
+		else if ("S".equals(userType.toUpperCase())) {
 			this.setVisible(false); // Hide this login frame
 			
 			new StudentUI(usernameField.getText()).setVisible(true);
