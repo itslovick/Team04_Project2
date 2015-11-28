@@ -15,6 +15,5 @@ public class runApplication {
 	public static void main(String args[]) {
 		// Display login window
 		new LoginUI().setVisible(true);
-		
 	}
 }

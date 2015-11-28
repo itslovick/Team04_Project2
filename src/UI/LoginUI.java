@@ -122,91 +122,41 @@ public class LoginUI extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void exitButtonExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitButtonExitActionPerformed
-        System.exit(0);
+		System.exit(0);
     }//GEN-LAST:event_exitButtonExitActionPerformed
 
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
         // Call the authenticateUser method from the database with 
 		// the strings stored in usernameField and passwordField. 
 		
-		String userType = "s";	// To store the type of user logging into system. 
-								// Options include t - teacher, s - student, 
-								// and n - not valid.
+		String userType = "T"; // To store the type of user logging into system. 
+							// Options include T - teacher, S - student, 
+							// A- admin, and N - not valid.
+
+		// AUTHENTICATION
 		
-		// ----- AUTHENTICATION AND CREATION OF NEW WINDOWS ----- // 
-		
-		// Create a teacher window if userType is T - teacher
-		// Pass username to TeacherUI to create user object in TeacherUI class 
-		// with data populated from the database.
-		if ("T".equals(userType.toUpperCase())) {
-			this.setVisible(false); // Hide this login frame
-			
-			// Create a new teacher frame. Username is passed as parameter 
-			// to create the title for the new Frame, and to retrieve 
-			// user information using getUser method from Database class.
-			new TeacherUI(usernameField.getText()).setVisible(true); 
-			
-		}
-		
-		// Create a student window if userType is S - student
-		// Pass username to TeacherUI to create user object in TeacherUI class 
-		// with data populated from the database.
-		else if ("S".equals(userType.toUpperCase())) {
-			this.setVisible(false); // Hide this login frame
-			
-			new StudentUI(usernameField.getText()).setVisible(true);
-		}
-		
-		// Otherwise, we simple clear the fields to allow another attempt.
-		else {
-			usernameField.setText(null);
-			passwordField.setText(null);
-		}
-		
-//		Component frame = null;
-//		JOptionPane.showMessageDialog(frame, "Fake login works so far");
-//		new StudentUI("Blank").setVisible(true);
-//		usernameField.setText(null);
-//		passwordField.setText(null);
-//		this.setVisible(false);
+		// Creation of windows depending on userType returned after input
+		// validation.
+		switch (userType) {
+			case "T": 
+				this.dispose();
+				new TeacherUI(this, usernameField.getText()).setVisible(true);
+				break;
+			case "S":
+				this.dispose();
+				new StudentUI(this, usernameField.getText()).setVisible(true);
+				break;
+			case "A":
+				this.dispose();
+				new AdminUI(this, usernameField.getText()).setVisible(true);
+				break;
+			default: 
+				usernameField.setText(null);
+				passwordField.setText(null);
+		} // End switch
     }//GEN-LAST:event_loginButtonActionPerformed
 
-//	/**
-//	 * @param args the command line arguments
-//	 */
-//	public static void main(String args[]) {
-//		/* Set the Nimbus look and feel */
-//        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-//        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-//		 * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-//		 */
-//		try {
-//			for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-//				if ("Nimbus".equals(info.getName())) {
-//					javax.swing.UIManager.setLookAndFeel(info.getClassName());
-//					break;
-//				}
-//			}
-//		} catch (ClassNotFoundException ex) {
-//			java.util.logging.Logger.getLogger(LoginUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//		} catch (InstantiationException ex) {
-//			java.util.logging.Logger.getLogger(LoginUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//		} catch (IllegalAccessException ex) {
-//			java.util.logging.Logger.getLogger(LoginUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//		} catch (javax.swing.UnsupportedLookAndFeelException ex) {
-//			java.util.logging.Logger.getLogger(LoginUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-//		}
-//        //</editor-fold>
-//        //</editor-fold>
-//
-//		/* Create and display the form */
-//		java.awt.EventQueue.invokeLater(new Runnable() {
-//			public void run() {
-//				new LoginUI().setVisible(true);
-//			}
-//		});
-//	}
-
+	
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton exitButton;
     private javax.swing.JPanel jPanel1;
