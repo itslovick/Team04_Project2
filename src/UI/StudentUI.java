@@ -31,7 +31,11 @@ public class StudentUI extends javax.swing.JDialog {
         navPanel = new javax.swing.JPanel();
         statsButton = new javax.swing.JButton();
         exitButton = new javax.swing.JButton();
+        gradesButton = new javax.swing.JButton();
+        groupsButton = new javax.swing.JButton();
         dataPanel = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -46,6 +50,15 @@ public class StudentUI extends javax.swing.JDialog {
             }
         });
 
+        gradesButton.setText("My Grades");
+        gradesButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                gradesButtonActionPerformed(evt);
+            }
+        });
+
+        groupsButton.setText("My Groups");
+
         javax.swing.GroupLayout navPanelLayout = new javax.swing.GroupLayout(navPanel);
         navPanel.setLayout(navPanelLayout);
         navPanelLayout.setHorizontalGroup(
@@ -54,7 +67,9 @@ public class StudentUI extends javax.swing.JDialog {
                 .addContainerGap()
                 .addGroup(navPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(statsButton, javax.swing.GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE)
-                    .addComponent(exitButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(exitButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(gradesButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(groupsButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         navPanelLayout.setVerticalGroup(
@@ -62,22 +77,31 @@ public class StudentUI extends javax.swing.JDialog {
             .addGroup(navPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(statsButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 316, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(gradesButton)
+                .addGap(18, 18, 18)
+                .addComponent(groupsButton)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 230, Short.MAX_VALUE)
                 .addComponent(exitButton)
                 .addContainerGap())
         );
 
         dataPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        jTextArea1.setEditable(false);
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jScrollPane1.setViewportView(jTextArea1);
+
         javax.swing.GroupLayout dataPanelLayout = new javax.swing.GroupLayout(dataPanel);
         dataPanel.setLayout(dataPanelLayout);
         dataPanelLayout.setHorizontalGroup(
             dataPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 425, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 425, Short.MAX_VALUE)
         );
         dataPanelLayout.setVerticalGroup(
             dataPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addComponent(jScrollPane1)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -109,9 +133,17 @@ public class StudentUI extends javax.swing.JDialog {
 		new LoginUI().setVisible(true);
     }//GEN-LAST:event_exitButtonActionPerformed
 
+    private void gradesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gradesButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_gradesButtonActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel dataPanel;
     private javax.swing.JButton exitButton;
+    private javax.swing.JButton gradesButton;
+    private javax.swing.JButton groupsButton;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JPanel navPanel;
     private javax.swing.JButton statsButton;
     // End of variables declaration//GEN-END:variables
