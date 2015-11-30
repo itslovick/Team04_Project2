@@ -42,6 +42,11 @@ public class AdminUI extends javax.swing.JDialog {
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         addNewUserButton.setText("Add New User");
+        addNewUserButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                addNewUserButtonActionPerformed(evt);
+            }
+        });
 
         transciptButton.setText("Modify Transcript");
         transciptButton.addActionListener(new java.awt.event.ActionListener() {
@@ -58,6 +63,11 @@ public class AdminUI extends javax.swing.JDialog {
         });
 
         enrollButton.setText("Enroll Student");
+        enrollButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                enrollButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -136,6 +146,14 @@ public class AdminUI extends javax.swing.JDialog {
     private void transciptButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_transciptButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_transciptButtonActionPerformed
+
+    private void addNewUserButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addNewUserButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_addNewUserButtonActionPerformed
+
+    private void enrollButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enrollButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_enrollButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

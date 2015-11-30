@@ -104,16 +104,25 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="View Groups"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="viewGroupsButtonActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="createGroupButton">
           <Properties>
             <Property name="text" type="java.lang.String" value="Create New Group"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="createGroupButtonActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="viewStudentListButton">
           <Properties>
             <Property name="text" type="java.lang.String" value="View Student List"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="viewStudentListButtonActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

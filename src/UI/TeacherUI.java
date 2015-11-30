@@ -49,10 +49,25 @@ public class TeacherUI extends javax.swing.JDialog {
         });
 
         viewGroupsButton.setText("View Groups");
+        viewGroupsButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewGroupsButtonActionPerformed(evt);
+            }
+        });
 
         createGroupButton.setText("Create New Group");
+        createGroupButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                createGroupButtonActionPerformed(evt);
+            }
+        });
 
         viewStudentListButton.setText("View Student List");
+        viewStudentListButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                viewStudentListButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -130,6 +145,18 @@ public class TeacherUI extends javax.swing.JDialog {
         this.dispose();
 		new LoginUI().setVisible(true);
     }//GEN-LAST:event_logOffButtonActionPerformed
+
+    private void viewGroupsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewGroupsButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_viewGroupsButtonActionPerformed
+
+    private void createGroupButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createGroupButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_createGroupButtonActionPerformed
+
+    private void viewStudentListButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewStudentListButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_viewStudentListButtonActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

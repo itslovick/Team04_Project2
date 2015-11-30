@@ -91,6 +91,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="My Stats"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="statsButtonActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="exitButton">
           <Properties>
@@ -112,6 +115,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="My Groups"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="groupsButtonActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

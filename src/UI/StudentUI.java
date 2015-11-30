@@ -42,6 +42,11 @@ public class StudentUI extends javax.swing.JDialog {
         navPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
         statsButton.setText("My Stats");
+        statsButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                statsButtonActionPerformed(evt);
+            }
+        });
 
         exitButton.setText("Log Off ");
         exitButton.addActionListener(new java.awt.event.ActionListener() {
@@ -58,6 +63,11 @@ public class StudentUI extends javax.swing.JDialog {
         });
 
         groupsButton.setText("My Groups");
+        groupsButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                groupsButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout navPanelLayout = new javax.swing.GroupLayout(navPanel);
         navPanel.setLayout(navPanelLayout);
@@ -136,6 +146,14 @@ public class StudentUI extends javax.swing.JDialog {
     private void gradesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_gradesButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_gradesButtonActionPerformed
+
+    private void statsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_statsButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_statsButtonActionPerformed
+
+    private void groupsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_groupsButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_groupsButtonActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel dataPanel;
