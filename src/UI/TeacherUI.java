@@ -151,7 +151,8 @@ public class TeacherUI extends javax.swing.JDialog {
     }//GEN-LAST:event_viewGroupsButtonActionPerformed
 
     private void createGroupButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createGroupButtonActionPerformed
-        // TODO add your handling code here:
+        new CreateGroupUI(null, rootPaneCheckingEnabled).setVisible(true);
+		
     }//GEN-LAST:event_createGroupButtonActionPerformed
 
     private void viewStudentListButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_viewStudentListButtonActionPerformed
