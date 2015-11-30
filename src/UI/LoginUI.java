@@ -129,7 +129,7 @@ public class LoginUI extends javax.swing.JFrame {
         // Call the authenticateUser method from the database with 
 		// the strings stored in usernameField and passwordField. 
 		
-		String userType = "T"; // To store the type of user logging into system. 
+		String userType = "A"; // To store the type of user logging into system. 
 							// Options include T - teacher, S - student, 
 							// A- admin, and N - not valid.
 

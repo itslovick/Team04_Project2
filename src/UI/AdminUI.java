@@ -148,7 +148,7 @@ public class AdminUI extends javax.swing.JDialog {
     }//GEN-LAST:event_transciptButtonActionPerformed
 
     private void addNewUserButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addNewUserButtonActionPerformed
-        // TODO add your handling code here:
+        new AddUserUI(null, rootPaneCheckingEnabled).setVisible(true);
     }//GEN-LAST:event_addNewUserButtonActionPerformed
 
     private void enrollButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_enrollButtonActionPerformed
