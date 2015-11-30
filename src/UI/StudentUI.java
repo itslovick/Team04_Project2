@@ -29,7 +29,6 @@ public class StudentUI extends javax.swing.JDialog {
     private void initComponents() {
 
         navPanel = new javax.swing.JPanel();
-        statsButton = new javax.swing.JButton();
         exitButton = new javax.swing.JButton();
         gradesButton = new javax.swing.JButton();
         groupsButton = new javax.swing.JButton();
@@ -40,13 +39,6 @@ public class StudentUI extends javax.swing.JDialog {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         navPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        statsButton.setText("My Stats");
-        statsButton.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                statsButtonActionPerformed(evt);
-            }
-        });
 
         exitButton.setText("Log Off ");
         exitButton.addActionListener(new java.awt.event.ActionListener() {
@@ -76,9 +68,8 @@ public class StudentUI extends javax.swing.JDialog {
             .addGroup(navPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(navPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(statsButton, javax.swing.GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE)
                     .addComponent(exitButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(gradesButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(gradesButton, javax.swing.GroupLayout.DEFAULT_SIZE, 148, Short.MAX_VALUE)
                     .addComponent(groupsButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
@@ -86,12 +77,10 @@ public class StudentUI extends javax.swing.JDialog {
             navPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(navPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(statsButton)
-                .addGap(18, 18, 18)
                 .addComponent(gradesButton)
                 .addGap(18, 18, 18)
                 .addComponent(groupsButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 230, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 273, Short.MAX_VALUE)
                 .addComponent(exitButton)
                 .addContainerGap())
         );
@@ -147,10 +136,6 @@ public class StudentUI extends javax.swing.JDialog {
         // TODO add your handling code here:
     }//GEN-LAST:event_gradesButtonActionPerformed
 
-    private void statsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_statsButtonActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_statsButtonActionPerformed
-
     private void groupsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_groupsButtonActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_groupsButtonActionPerformed
@@ -163,6 +148,5 @@ public class StudentUI extends javax.swing.JDialog {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JPanel navPanel;
-    private javax.swing.JButton statsButton;
     // End of variables declaration//GEN-END:variables
 }
